@@ -1,0 +1,202 @@
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background: linear-gradient(135deg, blue, purple); /* Set a gradient background */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    background-attachment: fixed; /* Fix background during scrolling */
+    font-family: "Bebas Neue", sans-serif; /* Set font family */
+    color: white; /* Set text color to white */
+    min-height: 100vh; /* Ensure body takes up full viewport height */
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed; /* Fix navbar at the top of the page */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+    padding: 1rem 0; /* Add vertical padding */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Add blur effect to background */
+    z-index: 1000; /* Ensure navbar stays above other elements */
+}
+
+/* Navbar list styling */
+.navbar ul {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Individual navbar item styling */
+.nav-item {
+    margin: 0 2rem; /* Add horizontal spacing between items */
+}
+
+/* Navbar link styling */
+.nav-link {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5rem; /* Set font size */
+    position: relative; /* Enable positioning for pseudo-elements */
+    padding: 0.5rem 1rem; /* Add padding around links */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Navbar link hover underline effect */
+.nav-link::after {
+    content: ''; /* Add an empty pseudo-element */
+    position: absolute; /* Position it relative to the link */
+    width: 0; /* Start with no width */
+    height: 2px; /* Set height of underline */
+    bottom: 0; /* Position at the bottom of the link */
+    left: 0; /* Align to the left */
+    background-color: white; /* Set underline color */
+    transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+/* Expand underline on hover */
+.nav-link:hover::after {
+    width: 100%; /* Expand underline to full width */
+}
+
+/* Hero section styling */
+.hero-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out content */
+    align-items: center; /* Center items vertically */
+    min-height: 100vh; /* Full viewport height */
+    padding: 0 5%; /* Add horizontal padding */
+    padding-bottom: 60px; /* Prevent content from being hidden by footer */
+}
+
+/* Hero content styling */
+.hero-content {
+    flex: 1; /* Take up equal space */
+    padding-right: 2rem; /* Add spacing to the right */
+}
+
+/* Hero header styling */
+#header {
+    font-size: 8rem; /* Large font size */
+    margin: 0; /* Remove margin */
+    line-height: 1; /* Set line height */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to text */
+    animation: fadeInUp 1s ease; /* Apply fade-in animation */
+}
+
+/* Call-to-action buttons container */
+.cta-buttons {
+    margin-top: 2rem; /* Add spacing above buttons */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 1rem; /* Add spacing between buttons */
+}
+
+/* Individual call-to-action button styling */
+.cta-button {
+    display: inline-block; /* Inline-block for button-like behavior */
+    padding: 1rem 2rem; /* Add padding */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: 2px solid white; /* White border */
+    border-radius: 30px; /* Rounded corners */
+    color: white; /* Set text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Set font size */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-align: center; /* Center text */
+}
+
+/* Call-to-action button hover effect */
+.cta-button:hover {
+    background: white; /* Change background to white */
+    color: purple; /* Change text color to purple */
+    transform: translateY(-3px); /* Slightly lift button */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Hero image container */
+.hero-image {
+    flex: 1; /* Take up equal space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+}
+
+/* Hero feature image styling */
+.feature-image {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Feature image hover effect */
+.feature-image:hover {
+    transform: scale(1.02); /* Slightly enlarge image */
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center text */
+        padding-top: 80px; /* Add padding above content */
+    }
+
+    #header {
+        font-size: 4rem; /* Reduce header font size */
+    }
+
+    .hero-content {
+        padding-right: 0; /* Remove right padding */
+        margin-bottom: 2rem; /* Add spacing below content */
+    }
+
+    .nav-item {
+        margin: 0 1rem; /* Reduce spacing between navbar items */
+    }
+
+    .nav-link {
+        font-size: 1.2rem; /* Reduce font size */
+    }
+
+    .footer-text {
+        font-size: 1rem; /* Reduce footer text size */
+    }
+}
+
+/* Footer styling */
+.footer {
+    position: fixed; /* Fix footer at the bottom of the page */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Full width */
+    padding: 1rem 0; /* Add vertical padding */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Add blur effect to background */
+    text-align: center; /* Center text */
+    z-index: 1000; /* Ensure footer stays above other elements */
+}
+
+/* Footer text styling */
+.footer-text {
+    margin: 0; /* Remove margin */
+    font-size: 1.2rem; /* Set font size */
+    color: white; /* Set text color */
+    letter-spacing: 1px; /* Add spacing between letters */
+}
